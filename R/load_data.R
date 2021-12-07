@@ -9,8 +9,8 @@
 #' @examples
 #' load_data("rawdata.xls")
 load_data <- function(filename) {
-  df <- readxl::read_excel(filename)
-  df <- df[-c(1:5),c(4,7,8,10)]
+  df <- readxl::read_excel(filename, skip=5)
+  df <- df[, c(4,7,8,10)]
   df
 }
 
