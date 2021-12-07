@@ -73,6 +73,13 @@ Here is a citation [@Marwick2017]
 my_data <- load_data('../data/raw_data/rawdata.xls')
 head(my_data)
 
+# Figure 1a: no temperature correction
+linear_lm <- fit_model(my_data, degree=1)
+quadratic_lm <- fit_model(my_data, degree=2)
+
+# Figure 1b: with temperature correction
+linear_lm_tempcorrect <- fit_model(my_data, degree=1, temp_correct=TRUE)
+quadratic_lm_tempcorrect <- fit_model(my_data, degree=2, temp_correct=TRUE)
 ```
 
 # Discussion
