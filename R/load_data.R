@@ -1,10 +1,11 @@
 #' Load raw data
 #'
 #' This turns the raw data Excel file into a dataframe. Removes first 5 rows.
+#' Log transforms Mass column and BMR column
 #'
 #' @param filename: path to raw data file
 #'
-#' @return dataframe with 4 columns
+#' @return dataframe with 4 columns: Specia, Mass, BMR, Temperature
 #' @export
 #' @examples
 #' load_data("rawdata.xls")
