@@ -69,7 +69,7 @@ Here is a citation [@Marwick2017]
 
 ```{r get-data, eval = FALSE}
 # Note the path that we need to use to access our data files when rendering this document
-my_data <- read.csv(here::here('analysis/data/raw_data/my_csv_file.csv'))
+my_data <- load_data('analysis/data/raw_data/rawdata.xls')
 ```
 
 ```{r demo-plot, fig.cap="A plot of random numbers"}
