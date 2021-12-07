@@ -9,8 +9,7 @@
 #' @examples
 #' load_data("rawdata.xls")
 load_data <- function(filename) {
-  library("readxl")
-  read_excel(filename)
+  readxl::read_excel(filename)
 }
 
 
