@@ -11,7 +11,10 @@
 load_data <- function(filename) {
   df <- readxl::read_excel(filename, skip=5)
   df <- df[, c(4,7,8,10)]
+  df <- na.omit(df)
+  df[,c(2,3)] <- log(df[,c(2,3)])
   df
+
 }
 
 
