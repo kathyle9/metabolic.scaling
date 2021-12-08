@@ -76,9 +76,9 @@ head(my_data)
 # Figure 1a: no temperature correction
 predict_range = seq(from = 0, to = 7, length.out = 100)
 linear_lm <- fit_model(my_data, degree=1)
-linear_predict <- model_prediction(mass_range, linear_lm)
+linear_predict <- model_prediction(predict_range, linear_lm)
 quadratic_lm <- fit_model(my_data, degree=2)
-quadratic_predict <- model_prediction(mass_range, quadratic_lm)
+quadratic_predict <- model_prediction(predict_range, quadratic_lm)
 
 # Figure 1b: with temperature correction
 linear_lm_tempcorrect <- fit_model(my_data, degree=1, temp_correct=TRUE)
