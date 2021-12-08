@@ -1,3 +1,3 @@
-model_prediction <- function(model) {
+model_prediction <- function(x_range, model) {
 
 }

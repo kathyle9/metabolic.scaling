@@ -13,5 +13,5 @@ fit_model <- function(df, degree=1, temp_correct=FALSE, exclusion=list()) {
   } else {
     model <- lm(get("BMR (W)") ~ poly(get("Mass (g)"), degree=degree), data = df_sub)
   }
-  return(model$coefficients)
+  return(model)
 }
