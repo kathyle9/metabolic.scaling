@@ -1,17 +1,16 @@
 ---
-title: "Title Goes Here"
+title: Final Project: Metabolic Scaling
 author:
-  - Myfirstname Mylastname:
-      email: fl@oneplace.edu
-      institute: [UofO]
+    - Joy Doong:
+      email: joydoong@stanford.edu
+      institute: Stanford University
       correspondence: true
-  - Yourfirstname Yourlastname:
-      email: fl@another.edu
-      institute: [UofA]
-      correspondence: false
+  - Kathy Le:
+      email: kathyle@stanford.edu
+      institute: Stanford University
+      correspondence: true
 institute:
-  - UofO: University of One Place
-  - UofA: University of Another Place
+  - Stanford University:
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::word_document2:
