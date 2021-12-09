@@ -9,10 +9,15 @@
 fit_model <- function(df, degree=1, temp_correct=FALSE, exclusion=list()) {
   df_sub <- subset(df, !df$Species %in% exclusion)
   if (temp_correct){
-    df_sub %>% tidyr::drop_na(`Temperature (C)`)
-    model <- lm(get("BMR (W)") ~ poly(get("Mass (g)"), degree=degree, raw=TRUE) + I(1/get("Temperature (C)")), data = df_sub)
+    df_sub <- df_sub %>% tidyr::drop_na(`Temperature (C)`)
+    x <- df_sub$`Mass (g)`
+    y <- df_sub$`BMR (W)`
+    t <- df_sub$`Temperature (C)`
+    model <- lm(y ~ poly(x, degree=degree, raw=TRUE) + I(1/t))
   } else {
-    model <- lm(get("BMR (W)") ~ poly(get("Mass (g)"), degree=degree, raw=TRUE), data = df_sub)
+    x <- df_sub$`Mass (g)`
+    y <- df_sub$`BMR (W)`
+    model <- lm(y ~ poly(x, degree=degree, raw=TRUE))
   }
   return(model)
 }
