@@ -16,7 +16,7 @@ Title <- "Title of your paper goes here"
 
 # metabolic.scaling
 
-Final project by Joy Doong and Kathy Le
+Final project by Joy Doong and Kathy Le. 
 We sought to reproduce Figure 1 from this paper: https://www.nature.com/articles/nature08920
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kathyle9/metabolic.scaling/master?urlpath=rstudio)
