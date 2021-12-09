@@ -1,10 +1,10 @@
-#' Title
+#' Plot1a
 #'
-#' @param df
+#' Makes plot1a
+#' @param df The dataframe with columns for Mass and BMR
 #'
-#' @return
+#' @return ggplot
 #' @export
-#'
 plot1a <- function(df) {
   data_points = ggplot(df, aes(x=`Mass (g)`, y=`BMR (W)`)) + geom_point(size = 0.5)
   linear = geom_line(aes(x=`Mass (g)`, y=linear_predict), color='red3')

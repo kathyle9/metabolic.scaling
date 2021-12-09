@@ -6,7 +6,7 @@
 #'
 #' @param filename: path to raw data file
 #'
-#' @return dataframe with 4 columns: Specia, Mass, BMR, Temperature
+#' @return dataframe with 4 columns: Species, Mass, BMR, Temperature
 #' @export
 #' @examples
 #' load_data("rawdata.xls")
