@@ -13,8 +13,8 @@
 load_data <- function(filename) {
   df <- readxl::read_excel(filename, skip=5)
   df <- df[, c('Species','Mass (g)','BMR (W)','Temperature (C)')]
-  df %>% tidyr::drop_na(`Mass (g)`, `BMR (W)`)
-  df[,c('Mass (g)','BMR (W)')] <- log(df[,c('Mass (g)','BMR (W)')])
+  df <- df %>% tidyr::drop_na(`Mass (g)`) %>% tidyr::drop_na(`BMR (W)`)
+  df[,c('Mass (g)','BMR (W)')] <- log10(df[,c('Mass (g)','BMR (W)')])
   df
 
 }
