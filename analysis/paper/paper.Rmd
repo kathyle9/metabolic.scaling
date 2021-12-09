@@ -74,11 +74,12 @@ my_data <- load_data('../data/raw_data/rawdata.xls')
 head(my_data)
 
 # Figure 1a: no temperature correction
-predict_range = seq(from = 0, to = 7, length.out = 100)
+predict_range = my_data$`Mass (g)`
 linear_lm <- fit_model(my_data, degree=1)
-linear_predict <- model_prediction(predict_range, linear_lm)
+my_data$linear_predict <- model_prediction(predict_range, linear_lm)
 quadratic_lm <- fit_model(my_data, degree=2)
-quadratic_predict <- model_prediction(predict_range, quadratic_lm)
+my_data$quadratic_predict <- model_prediction(predict_range, quadratic_lm)
+plot1a(my_data)
 
 # Figure 1b: with temperature correction
 range_b = seq(from = 0, to = 6, length.out = 100)
