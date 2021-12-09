@@ -75,10 +75,10 @@ head(my_data)
 
 # Figure 1a: no temperature correction
 predict_range = my_data$`Mass (g)`
-linear_lm <- fit_model(my_data, degree=1)
-my_data$linear_predict <- predict(linear_lm, data.frame(predict_range))
-quadratic_lm <- fit_model(my_data, degree=2)
-my_data$quadratic_predict <- predict(quadratic_lm, data.frame(predict_range))
+linear_lm <- fit_model(my_data, degree=1, exclusion = as.list("orca"))
+my_data$linear_predict <- dplyr::tibble(x = predict_range) %>% predict(linear_lm, newdata = .)
+quadratic_lm <- fit_model(my_data, degree=2, exclusion = as.list("orca"))
+my_data$quadratic_predict <- dplyr::tibble(x = predict_range) %>% predict(quadratic_lm, newdata = .)
 plot1a(my_data)
 
 # Figure 1b: with temperature correction

@@ -10,7 +10,7 @@ load_data(filename)
 \item{filename:}{path to raw data file}
 }
 \value{
-dataframe with 4 columns: Specia, Mass, BMR, Temperature
+dataframe with 4 columns: Species, Mass, BMR, Temperature
 }
 \description{
 This turns the raw data Excel file into a dataframe. Removes first 5 rows.

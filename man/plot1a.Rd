@@ -2,16 +2,16 @@
 % Please edit documentation in R/plot1a.R
 \name{plot1a}
 \alias{plot1a}
-\title{Title}
+\title{Plot1a}
 \usage{
 plot1a(df)
 }
 \arguments{
-\item{df}{}
+\item{df}{The dataframe with columns for Mass and BMR}
 }
 \value{
-
+ggplot
 }
 \description{
-Title
+Makes plot1a
 }

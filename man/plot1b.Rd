@@ -2,16 +2,25 @@
 % Please edit documentation in R/plot1b.R
 \name{plot1b}
 \alias{plot1b}
-\title{Title}
+\title{Plot1b}
 \usage{
 plot1b(x_range, linear_lm, quadratic_lm, hline = c(2/3, 3/4))
 }
 \arguments{
-\item{hline}{}
+\item{x_range}{Range of input values in Mass (g)}
+
+\item{linear_lm}{Linear model fitted to the data}
+
+\item{quadratic_lm}{Quadratic model fitted to the data}
+
+\item{hline}{Reference horizontal lines}
 }
 \value{
 
 }
 \description{
-Title
+Makes plot1b
+}
+\examples{
+plot1b(range_b, linear_lm_tempcorrect, quadratic_lm_tempcorrect)
 }
