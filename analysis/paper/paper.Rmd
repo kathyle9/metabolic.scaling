@@ -86,6 +86,7 @@ range_b = seq(from = 0, to = 6, length.out = 100)
 linear_lm_tempcorrect <- fit_model(my_data, degree=1, temp_correct=TRUE)
 quadratic_lm_tempcorrect <- fit_model(my_data, degree=2, temp_correct=TRUE)
 plot1b(range_b, linear_lm_tempcorrect, quadratic_lm_tempcorrect)
+
 ```
 
 # Discussion
