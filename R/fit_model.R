@@ -5,7 +5,7 @@
 #' @param temp_correct A flag for temperature correction, TRUE or FALSE (default)
 #' @param exclusion A list of species name to exclude
 #' @return The coefficients for the fitted model
-
+#' @export
 fit_model <- function(df, degree=1, temp_correct=FALSE, exclusion=list()) {
   df_sub <- subset(df, !df$Species %in% exclusion)
   if (temp_correct){

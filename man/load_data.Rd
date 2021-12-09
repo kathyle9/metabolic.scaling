@@ -2,18 +2,20 @@
 % Please edit documentation in R/load_data.R
 \name{load_data}
 \alias{load_data}
-\title{Load raw data}
+\title{Load raw data from paper}
 \usage{
 load_data(filename)
 }
 \arguments{
-\item{filename}{}
+\item{filename:}{path to raw data file}
 }
 \value{
-
+dataframe with 4 columns: Specia, Mass, BMR, Temperature
 }
 \description{
-This turns the raw data Excel file into a dataframe.
+This turns the raw data Excel file into a dataframe. Removes first 5 rows.
+Log transforms Mass column and BMR column (dropping species with missing
+values). Note: Some species may still have missing Temperature values.
 }
 \examples{
 load_data("rawdata.xls")

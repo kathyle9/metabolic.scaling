@@ -1,6 +1,13 @@
+#' Title
+#'
+#' @param df
+#'
+#' @return
+#' @export
+#'
 plot1a <- function(df) {
-  data_points = ggplot2::ggplot(df, ggplot2::aes(x=`Mass (g)`, y=`BMR (W)`)) + ggplot2::geom_point(size = 0.5)
-  linear = ggplot2::geom_line(ggplot2::aes(x=`Mass (g)`, y=linear_predict), color='red3')
-  quadratic = ggplot2::geom_line(ggplot2::aes(x=`Mass (g)`, y=quadratic_predict), color='blue3')
-  data_points + linear + quadratic + ggplot2::xlab('Log10[M (g)]') + ggplot2::ylab('Log10[BMR (W)]')
+  data_points = ggplot(df, aes(x=`Mass (g)`, y=`BMR (W)`)) + geom_point(size = 0.5)
+  linear = geom_line(aes(x=`Mass (g)`, y=linear_predict), color='red3')
+  quadratic = geom_line(aes(x=`Mass (g)`, y=quadratic_predict), color='blue3')
+  data_points + linear + quadratic + xlab('Log10[M (g)]') + ylab('Log10[BMR (W)]')
 }
