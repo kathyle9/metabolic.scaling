@@ -15,5 +15,10 @@ Imports:
     ggplot2,
     here,
     magrittr
-Suggests: devtools,
+Suggests: 
+    testthat (>= 3.0.0),
+    devtools,
     git2r
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
