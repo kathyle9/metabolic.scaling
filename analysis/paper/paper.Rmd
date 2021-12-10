@@ -69,21 +69,21 @@ Here is a citation [@Marwick2017]
 
 ```{r get-data}
 # Note the path that we need to use to access our data files when rendering this document
-my_data <- load_data('../data/raw_data/rawdata.xls')
-head(my_data)
+#my_data <- load_data('../data/raw_data/rawdata.xls')
+#head(my_data)
 
 # Figure 1a: no temperature correction
-predict_range = my_data$`Mass (g)`
-linear_lm <- fit_model(my_data, degree=1, exclusion = as.list("orca"))
-my_data$linear_predict <- dplyr::tibble(x = predict_range) %>% predict(linear_lm, newdata = .)
-quadratic_lm <- fit_model(my_data, degree=2, exclusion = as.list("orca"))
-my_data$quadratic_predict <- dplyr::tibble(x = predict_range) %>% predict(quadratic_lm, newdata = .)
-plot1a(my_data)
+predict_range = metabolic$`Mass (g)`
+linear_lm <- fit_model(metabolic, degree=1, exclusion = as.list("orca"))
+metabolic$linear_predict <- dplyr::tibble(x = predict_range) %>% predict(linear_lm, newdata = .)
+quadratic_lm <- fit_model(metabolic, degree=2, exclusion = as.list("orca"))
+metabolic$quadratic_predict <- dplyr::tibble(x = predict_range) %>% predict(quadratic_lm, newdata = .)
+plot1a(metabolic)
 
 # Figure 1b: with temperature correction
 range_b = seq(from = 0, to = 6, length.out = 100)
-linear_lm_tempcorrect <- fit_model(my_data, degree=1, temp_correct=TRUE)
-quadratic_lm_tempcorrect <- fit_model(my_data, degree=2, temp_correct=TRUE)
+linear_lm_tempcorrect <- fit_model(metabolic, degree=1, temp_correct=TRUE)
+quadratic_lm_tempcorrect <- fit_model(metabolic, degree=2, temp_correct=TRUE)
 plot1b(range_b, linear_lm_tempcorrect, quadratic_lm_tempcorrect)
 
 ```
